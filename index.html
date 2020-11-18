@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <!-- <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+            integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+            crossorigin="anonymous" />
+      <link rel="stylesheet" href="css/style.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <title>Cavicchioli vue TODOLIST</title>
+    </head>
+    <body>
+
+
+      <div id="app" class="container">
+        <header>
+          <img :src="pic" alt="Goku is training">
+          <div class="center">
+            <h1><i class="fas fa-clipboard-list"></i>TO DO LIST<i class="fas fa-clipboard-list"></i></h1>
+          </div>
+        </header>
+
+        <div class="input">
+          <!-- v-model mi permette di prendere l'input che l'utente mi da, trasformarlo in una variabile per poterlo usare -->
+          <!-- in questo caso questo input deve essere, tramite una fuzione, caricato nella ol che ho nel div.output -->
+          <input type="text" v-model="thingToDo" placeholder="What would a Sayan do?">
+          <!-- <textarea v-model="thingToDo" placeholder="add something you have to do"></textarea> alternativa a input-->
+          <button @click="addToList">Add to the LIST </button>
+        </div>
+
+        <div class="output">
+
+          <ol>
+              <!-- uso un bel v-for, visto bene nello slider per fare i pallini -->
+              <li v-for="(thing, index) in toDoList">
+                {{thing}}
+                <!-- a fianco a ogni thing gli faccio il bottone, legato alla specifica thing tramite index, che avvia la funzione di rimozione -->
+                <button @click="removeToList(index)" class="fas fa-times"></button>
+              </li>
+          </ol>
+
+        </div>
+
+      </div>
+
+
+    <script src="js/script.js"></script>
+    </body>
+</html>

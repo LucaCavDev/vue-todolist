@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: lightgreen;
+}
+
+header {
+  background-color: pink;
+}
+
+
+
+.container {
+  background-color: lightblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.center {
+  text-align: center;
+}
+
+.input {
+  background-color: purple;
+  min-width: 500px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input button {
+  min-height: 50px;
+}
+
+.input input {
+  min-height: 50px;
+  min-width: 300px;
+}
+.output {
+  background-color: gold;
+  min-width: 500px;
+}
+
+
+
+ol li {
+  text-align: center;
+}
