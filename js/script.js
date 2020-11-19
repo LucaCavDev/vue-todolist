@@ -3,10 +3,9 @@ var app = new Vue({
   data: {
     //creo faccio un array con le cose da fare. Potrei farlo vuoto, ma inizio mettedo 3 cose da fare
     toDoList: ['One million Push Ups and Squats', 'Kill Majin-Bu', 'Bang Bulma'],
-    //adesso mi creo un array vuoto con le nuove cose che inserisce l'utente
+    //adesso mi creo una variabile vuota con le nuove cose che inserisce l'utente
     thingToDo: '',
     pic: "img/Dragon-Ball-Z-Goku-Workout.gif",
-    //oppure se non mi funza provo a fare un unico array con tutte le cose, di default o no che sono da fare e lavoro su un unico array
   },
 
   methods: {
