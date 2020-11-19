@@ -72,16 +72,38 @@ header {
 
 .inputButton {
   min-height: 50px;
-  min-width: 100px;
-  cursor: pointer;
-  font-family: 'Montserrat Alternates', sans-serif;
+  width: 100px !important;
+  /* cursor: pointer;
+  font-family: 'Montserrat Alternates', sans-serif; */
 }
 
 .inputInput {
-  min-height: 50px;
-  min-width: 400px;
+  height: 50px;
+  min-width: 390px;
   font-family: 'Montserrat Alternates', sans-serif;
+  color: gold;
+  background: #111;
+  border-radius: 10px;
+  border: none;
+  padding-left: 20px;
+
+
+
 }
+
+::placeholder {
+  color: red;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: red;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+ color: red;
+}
+
 
 /* output */
 .output {
@@ -93,11 +115,20 @@ header {
 
 .outputButton {
   cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  border-radius: 10px;
+
+
 }
 
 .thing {
   text-align: center;
-  border-bottom: silver 1px solid;
+  margin-bottom: 5px;
   color: #111;
   background:
     linear-gradient(red, transparent),
@@ -106,11 +137,10 @@ header {
   background-blend-mode: screen;
   padding-top: 10px;
   padding-bottom: 10px;
+  width: 500px;
+  height: auto;
+  border-radius: 10px;
 
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-content: space-between; */
 }
 
 .gokuRelax {

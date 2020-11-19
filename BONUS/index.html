@@ -32,7 +32,7 @@
             <input type="text" v-model="thingToDo" class="inputInput" @keyup.enter="addToList" placeholder="What would a Sayan do?">
             <!-- <textarea v-model="newThingToDo" placeholder="add something you have to do"></textarea> alternativa a input-->
 
-            <button @click="addToList" class="inputButton">Add to the LIST </button>
+            <button @click="addToList" class="inputButton glow-on-hover">Add to the LIST </button>
           </div>
 
           <div class="output">
@@ -40,7 +40,7 @@
             <ol v-if="toDoList.length > 0">
               <!-- uso un bel v-for, visto bene nello slider per fare i pallini -->
               <li class="thing" v-for="(thing, index) in toDoList">
-                {{thing}}
+                <span>{{thing}}</span>
                 <!-- a fianco a ogni thing gli faccio il bottone, legato alla specifica thing tramite index, che avvia la funzione di rimozione -->
                 <button @click="removeToList(index)" class="fas fa-times outputButton"></button>
               </li>
