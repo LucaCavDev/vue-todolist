@@ -3,60 +3,60 @@
     <head>
         <meta charset="utf-8">
         <!-- <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,700;1,400&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
             integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
             crossorigin="anonymous" />
       <link rel="stylesheet" href="css/style.css">
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-        <title>Cavicchioli vue TODOLIST</title>
+        <title>BONUS Cavicchioli vue TODOLIST</title>
     </head>
     <body>
+        <div id="app" class="container" :style="{backgroundImage:'url(img/wallpaper.jpg)'}">
 
+          <header class="centerFlex">
+            <img :src="trainingGoku" class="gokuGif" alt="Goku is training">
+            <div class="title">
+              <h1><i class="fas fa-clipboard-list"></i>TO DO LIST<i class="fas fa-clipboard-list"></i></h1>
+            </div>
+            <!-- MOTIVATIONAL MUSIC -->
+            <div class="motivationalMusic">
+              <button @click="startMusic" class="glow-on-hover">Start to get Motivated</button>
+              <button @click="stopMusic" class="glow-on-hover">Enough! I am Motivated!</button>
+            </div>
+          </header>
 
-      <div id="app" class="container">
+          <div class="input">
+            <!-- v-model mi permette di prendere l'input che l'utente mi da, trasformarlo in una variabile per poterlo usare -->
+            <!-- in questo caso questo input deve essere, tramite una fuzione, caricato nella ol che ho nel div.output -->
+            <input type="text" v-model="thingToDo" class="inputInput" @keyup.enter="addToList" placeholder="What would a Sayan do?">
+            <!-- <textarea v-model="newThingToDo" placeholder="add something you have to do"></textarea> alternativa a input-->
 
-        <header class="centerFlex">
-          <img :src="trainingGoku" class="gokuGif" alt="Goku is training">
-          <div class="title">
-            <h1><i class="fas fa-clipboard-list"></i>TO DO LIST<i class="fas fa-clipboard-list"></i></h1>
+            <button @click="addToList" class="inputButton">Add to the LIST </button>
           </div>
-          <!-- MOTIVATIONAL MUSIC -->
-          <div class="motivationalMusic">
-            <button @click="startMusic" class="glow-on-hover">Start to get Motivated</button>
+
+          <div class="output">
+            <!-- condizine, si verifica che la lista non sia vuota -->
+            <ol v-if="toDoList.length > 0">
+              <!-- uso un bel v-for, visto bene nello slider per fare i pallini -->
+              <li class="thing" v-for="(thing, index) in toDoList">
+                {{thing}}
+                <!-- a fianco a ogni thing gli faccio il bottone, legato alla specifica thing tramite index, che avvia la funzione di rimozione -->
+                <button @click="removeToList(index)" class="fas fa-times outputButton"></button>
+              </li>
+            </ol>
+            <!-- se la lista è vuota -->
+            <div v-else class="centerFlex">
+              <h1>THE LIST IS EMPTY LIKE VEGETA'S HEART</h1>
+              <h2> We can relax for now!</h2>
+              <img :src="relaxingGoku" class="gokuRelax" alt="Goku is relaxing">
+
+            </div>
           </div>
-        </header>
 
-        <div class="input">
-          <!-- v-model mi permette di prendere l'input che l'utente mi da, trasformarlo in una variabile per poterlo usare -->
-          <!-- in questo caso questo input deve essere, tramite una fuzione, caricato nella ol che ho nel div.output -->
-          <input type="text" v-model="thingToDo" class="inputInput" @keyup.enter="addToList" placeholder="What would a Sayan do?">
-          <!-- <textarea v-model="newThingToDo" placeholder="add something you have to do"></textarea> alternativa a input-->
-
-          <button @click="addToList" class="inputButton">Add to the LIST </button>
         </div>
-
-        <div class="output">
-          <!-- condizine, si verifica che la lista non sia vuota -->
-          <ol v-if="toDoList.length > 0">
-            <!-- uso un bel v-for, visto bene nello slider per fare i pallini -->
-            <li class="thing" v-for="(thing, index) in toDoList">
-              {{thing}}
-              <!-- a fianco a ogni thing gli faccio il bottone, legato alla specifica thing tramite index, che avvia la funzione di rimozione -->
-              <button @click="removeToList(index)" class="fas fa-times outputButton"></button>
-            </li>
-          </ol>
-          <!-- se la lista è vuota -->
-          <div v-else class="centerFlex">
-            <h1>THE LIST IS EMPTY LIKE VEGETA'S HEART</h1>
-            <h2> We can relax for now!</h2>
-            <img :src="relaxingGoku" class="gokuRelax" alt="Goku is relaxing">
-
-          </div>
-        </div>
-
-      </div>
-
-
     <script src="js/script.js"></script>
     </body>
 </html>
+
+<!-- :style="{backgroundImage:'url(img/dragonball.jpg)'}" -->

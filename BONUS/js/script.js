@@ -31,6 +31,11 @@ var app = new Vue({
     startMusic(){
       myTrack.play()
       this.audioInPlay = true
+    },
+
+    stopMusic(){
+      myTrack.pause()
+      this.audioInPlay = false
     }
   }
 })
