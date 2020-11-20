@@ -86,9 +86,6 @@ header {
   border-radius: 10px;
   border: none;
   padding-left: 20px;
-
-
-
 }
 
 ::placeholder {
@@ -122,8 +119,6 @@ header {
   color: #fff;
   background: #111;
   border-radius: 10px;
-
-
 }
 
 .thing {
@@ -140,7 +135,6 @@ header {
   width: 500px;
   height: auto;
   border-radius: 10px;
-
 }
 
 .gokuRelax {
